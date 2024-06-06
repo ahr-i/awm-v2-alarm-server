@@ -12,11 +12,12 @@ async def websocket_endpoint(websocket: WebSocket):
     await manager.connect(websocket=websocket)
     try:
         while True:
-            data = await websocket.receive_text(websocket)
+            data = await websocket.receive_text()
             msg = json.loads(data)
             if msg["type"] == "register":
-                device_id = msg["device_id"]
-                manager.update_active(websocket=websocket, device_id=device_id)
+                device_id = msg["deviceId"]
+                print(f"Connected With {device_id}")
+                await manager.update_active(websocket=websocket, device_id=device_id)
     except Exception as e:
         print(f"Error: {e}")
     finally:

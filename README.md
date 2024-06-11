@@ -1,4 +1,4 @@
-# Capstone Design Project / Any Where Map
+# Capstone Design Project / Anywhere Map
 This is the repository for alarm functionality related to AWM v2.
 
 ## 0. Introduction to Alarm Server
